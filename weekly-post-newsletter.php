@@ -3,7 +3,7 @@
  * Plugin Name: Blog News Creator
  * Plugin URI: https://github.com/rajroshi/Blog-news-creator
  * Description: A powerful WordPress plugin that automatically generates beautiful HTML newsletters from your recent blog posts. Features include logo customization, footer editing, social media integration, and live preview.
- * Version: 0.5.0-beta
+ * Version: 0.5.1-beta
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Rajesh Benjwal
@@ -12,12 +12,25 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: weekly-post-newsletter
  * Domain Path: /languages
- * Update URI: https://github.com/rajroshi/Blog-news-creator
  */
 
 if (!defined('ABSPATH')) {
     exit;
 }
+
+// Include the library
+require_once __DIR__ . '/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+// Initialize the update checker
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/rajroshi/Blog-news-creator/',
+    __FILE__,
+    'blog-news-creator'
+);
+
+// Set the branch that contains the stable release
+$myUpdateChecker->setBranch('main');
 
 define('WPN_VERSION', '0.5.0-beta');
 define('WPN_PLUGIN_DIR', plugin_dir_path(__FILE__));
