@@ -1,0 +1,38 @@
+name: Version Check
+
+on:
+  push:
+    paths:
+      - 'weekly-post-newsletter.php'
+  pull_request:
+    paths:
+      - 'weekly-post-newsletter.php'
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Get latest tag
+        id: get_latest_tag
+        run: |
+          echo "LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo 'v0.0.0')" >> $GITHUB_ENV
+        
+      - name: Get version from plugin file
+        id: get_version
+        run: |
+          VERSION=$(grep "Version:" weekly-post-newsletter.php | awk '{print $3}')
+          echo "PLUGIN_VERSION=v$VERSION" >> $GITHUB_ENV
+          
+      - name: Compare versions
+        run: |
+          if [ "${{ env.LATEST_TAG }}" = "${{ env.PLUGIN_VERSION }}" ]; then
+            echo "Version matches latest tag"
+            exit 0
+          else
+            echo "Version mismatch:"
+            echo "Plugin version: ${{ env.PLUGIN_VERSION }}"
+            echo "Latest tag: ${{ env.LATEST_TAG }}"
+            exit 1
+          fi 

@@ -1,0 +1,30 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create plugin zip
+        run: |
+          cd ..
+          zip -r Blog-news-creator.zip Blog-news-creator -x "*.git*" "*.github*"
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ../Blog-news-creator.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true 
