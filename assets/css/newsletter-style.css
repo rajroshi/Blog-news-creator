@@ -1,0 +1,214 @@
+.wpn-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.wpn-settings {
+    flex: 1;
+    max-width: 600px;
+}
+
+.wpn-preview {
+    flex: 2;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.wpn-preview-content {
+    min-height: 400px;
+} 
+
+/* Admin Panel Styles */
+.wpn-admin {
+    margin: 20px;
+}
+
+.wpn-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1d2327;
+    margin-bottom: 30px;
+}
+
+.wpn-title .dashicons {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.wpn-admin-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Settings Panel */
+.wpn-settings-panel {
+    flex: 0 0 400px;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.wpn-settings-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.wpn-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2271b1;
+    color: #1d2327;
+    font-size: 1.3em;
+}
+
+.wpn-field-group {
+    margin-bottom: 20px;
+}
+
+.wpn-field-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Logo Upload */
+.wpn-logo-upload {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.wpn-logo-preview {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.wpn-logo-preview:empty::before {
+    content: "No logo";
+    color: #666;
+}
+
+/* Social Links */
+.wpn-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Preview Panel */
+.wpn-preview-panel {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 500px;
+}
+
+.wpn-preview-panel h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2271b1;
+    color: #1d2327;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Action Buttons */
+.wpn-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.wpn-actions button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.wpn-actions .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+/* Notices */
+.wpn-notices {
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .wpn-admin-container {
+        flex-direction: column;
+    }
+    
+    .wpn-settings-panel {
+        flex: none;
+        width: auto;
+    }
+} 
+
+/* Add these styles to your existing CSS */
+.wpn-html-view {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    resize: vertical;
+}
+
+.wpn-preview-toggle {
+    margin-left: auto;
+}
+
+.wpn-preview-panel {
+    position: relative;
+}
+
+.wpn-preview-panel h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+/* Settings saved notification */
+.settings-saved {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    background: #fff;
+    border-left: 4px solid #46b450;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    padding: 10px 15px;
+    z-index: 9999;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+} 
