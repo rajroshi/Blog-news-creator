@@ -3,7 +3,7 @@
  * Plugin Name: Blog News Creator
  * Plugin URI: https://github.com/rajroshi/Blog-news-creator
  * Description: A powerful WordPress plugin that automatically generates beautiful HTML newsletters from your recent blog posts. Features include logo customization, footer editing, social media integration, and live preview.
- * Version: 0.9.0
+ * Version: 0.5.0-beta
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Author: Rajesh Benjwal
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('WPN_VERSION', '0.9.0');
+define('WPN_VERSION', '0.5.0-beta');
 define('WPN_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPN_PLUGIN_URL', plugin_dir_url(__FILE__));
 
